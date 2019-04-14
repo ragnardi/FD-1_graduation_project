@@ -1,0 +1,125 @@
+@import "common/reset.less";
+@import "common/vars.less";
+@import "common/mix.less";
+@import "common/webfonts.less";
+@import "common/buttons.less";
+
+body {
+  background: #000;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  font: 1em Arial, sans-serif;
+}
+
+main {
+  margin: 0 0 20px;
+
+  .content-block {
+    background: @main-color;
+    padding: 20px;
+  }
+
+  h1 {
+    font: 4em "New Rocker", sans-serif;
+    color: @main-hovercolor;
+    text-align: center;
+    background: #fff;
+    border-bottom: 3px solid #b2b2b2;
+  }
+
+  .member {
+    position: relative;
+    padding: 20px;
+    background: @block-bg;
+    .binary-animation(all, .3s);
+
+    &:hover {
+      -webkit-box-shadow: 10px 10px 10px rgba(255, 0, 0, .5);
+      -moz-box-shadow: 10px 10px 10px rgba(255, 0, 0, .5);
+      box-shadow: 10px 10px 10px rgba(255, 0, 0, .5);
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 20px;
+    }
+
+    .head-row {
+      display: grid;
+      grid-template-columns: 20% 1fr;
+      @media screen and (max-width: 600px) {
+        display: block;
+      }
+      
+      .photo {
+        overflow: hidden;
+        
+        img {
+          width: 100%;
+          display: block;
+          .binary-animation(all, .2s);
+        }
+      }
+
+      .member-name {
+        color: @main-hovercolor;
+        font: 3em "New Rocker", sans-serif;
+        position: relative;
+
+        h2 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          .element-transform(translate(-50%, -50%));
+
+          @media screen and (max-width: 600px) {
+            position: static;
+            .element-transform(none);
+            text-align: center;
+          }
+
+          @media screen and (max-width: 366px) {
+            font-size: 2.5rem;
+          }
+        }
+      }
+    }
+
+    &:hover img {
+      .element-transform(scale(1.1));
+    }
+    
+    .scroll-btn {
+      color: @main-bg;
+      font-size: 2em;
+      font-weight: 900;
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      cursor: pointer;
+      opacity: .3;
+      .binary-animation(all, .2s);
+
+      &:hover {
+        color: @main-hovercolor;
+        opacity: 1;
+      }
+    }
+    
+    .about {
+      display: none;
+      margin-top: 20px;
+      font: 1.2em Arial, sans-serif;
+      color: @main-color;
+      text-align: justify;
+
+      p::first-letter {
+        font-weight: 900;
+        color: @main-hovercolor;
+      }
+    }
+  }
+}

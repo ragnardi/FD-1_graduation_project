@@ -1,0 +1,102 @@
+@import "webfonts.less";
+@import "mix.less";
+@import "vars.less";
+
+footer {
+  height: 300px;
+  padding: 20px;
+  background: url("../../img/footer/footer-bg.jpg") 50% 0 no-repeat;
+  position: relative;
+
+  p {
+    text-align: center;
+  }
+
+  .copyright {
+    color: @main-color;
+    font-size: .7em;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    .element-transform(translateX(-50%));
+  }
+
+  .footer-nav {
+    letter-spacing: 2em;
+
+    li {
+      display: inline-block;
+      letter-spacing: normal;
+
+      a {
+        text-decoration: none;
+        color: @main-color;
+        font-weight: 900;
+        .binary-animation(all, .2s);
+
+        &:hover {
+          color: @main-hovercolor;
+        }
+      }
+
+      .current {
+        color: @main-hovercolor;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      @media screen and (max-width: 825px) {
+        display: block;
+        &:not(:last-of-type) {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  .social-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    letter-spacing: 10px;
+
+    li {
+      display: inline-block;
+
+      a {
+        color: @main-color;
+        font-size: 1.5em;
+        text-decoration: none;
+
+        .icon-instagram, .icon-facebook2, .icon-twitter, .icon-youtube {
+          .binary-animation(all, .3s);
+        }
+
+        &:hover .icon-instagram {
+          color: darkorange;
+        }
+
+        &:hover .icon-facebook2 {
+          color: cornflowerblue;
+        }
+
+        &:hover .icon-twitter {
+          color: darkcyan;
+        }
+
+        &:hover .icon-youtube {
+          color: @main-hovercolor;
+        }
+      }
+      
+      @media screen and (max-width: 400px) {
+        display: block;
+        &:not(:last-of-type) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+
+}

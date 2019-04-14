@@ -1,0 +1,49 @@
+@import "common/reset.less";
+@import "common/webfonts.less";
+@import "common/mix.less";
+@import "common/vars.less";
+@import "common/buttons.less";
+
+body {
+  background: #000;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  font: 1em Arial, sans-serif;
+}
+
+main {
+  margin: 0 0 20px;
+
+  h1 {
+    font: 4em "New Rocker", sans-serif;
+    color: @main-hovercolor;
+    text-align: center;
+    background: #fff;
+    border-bottom: 3px solid #b2b2b2;
+  }
+
+  .gallery {
+    background: @main-color;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+
+    a {
+      .binary-animation(all, .2s);
+
+      &:hover {
+        .element-transform(scale(1.05));
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+

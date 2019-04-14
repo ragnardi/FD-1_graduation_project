@@ -1,0 +1,146 @@
+@import "common/reset.less";
+@import "common/vars.less";
+@import "common/mix.less";
+@import "common/webfonts.less";
+@import "common/buttons.less";
+
+body {
+  background: #000;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  font: 1em Arial, sans-serif;
+}
+
+.site-navigation .capital-letter {
+  color: @main-color !important;
+}
+
+main {
+  margin: 0 0 20px;
+
+  .headline {
+    text-align: center;
+    background: #fff;
+    border-bottom: 3px solid #b2b2b2;
+
+    h1 {
+      font: 4em "New Rocker", sans-serif;
+      color: @main-hovercolor;
+      margin: 0 auto;
+
+      @media screen and(max-width: 420px) {
+        font-size: 3em;
+      }
+     }
+
+    .cart {
+      text-decoration: none;
+      color: @main-hovercolor;
+      font-size: 2em;
+      font-weight: 900;
+
+      span {
+        display: inline-block;
+        .element-transform(translateY(-12px));
+      }
+    }
+  }
+
+  .goods-block {
+    padding: 20px;
+    background: @main-color;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+
+    .goods {
+      background: @block-bg;
+      padding: 20px;
+      position: relative;
+      .binary-animation(all, .2s);
+
+      &:hover {
+        -webkit-box-shadow: 5px 5px 10px rgba(255, 0, 0, .5);
+        -moz-box-shadow: 5px 5px 10px rgba(255, 0, 0, .5);
+        box-shadow: 5px 5px 10px rgba(255, 0, 0, .5);
+      }
+
+      .image-container {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          display: block;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          .binary-animation(all, .2s);
+        }
+      }
+
+      &:hover img {
+        .element-transform(scale(1.1));
+      }
+
+      .goods-description {
+        margin-top: 20px;
+        font-size: 1.3em;
+        color: @main-color;
+        font-weight: 900;
+      }
+
+      .price {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: @main-hovercolor;
+        margin-bottom: 60px;
+      }
+
+      .page-button {
+        width: 100px;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+
+        &:hover {
+          .element-transform(translateY(-5px));
+          -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+          -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+        }
+      }
+
+      .like-bar {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-size: 2em;
+        color: @main-color;
+
+        .like-button {
+          margin-right: 10px;
+          .binary-animation(all, .2s);
+          cursor: pointer;
+
+          &:hover {
+            color: @main-hovercolor;
+          }
+        }
+
+        .counter {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+      }
+    }
+  }
+}

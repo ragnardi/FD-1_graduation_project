@@ -1,0 +1,473 @@
+@import "common/reset.less";
+@import "common/vars.less";
+@import "common/mix.less";
+@import "common/webfonts.less";
+@import "common/buttons.less";
+
+
+
+body {
+  background: #000;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  font: 1em Arial, sans-serif;
+}
+
+main {
+  margin: 0 0 20px;
+  display: grid;
+  grid-template: "a a a"
+                 "b c c"
+                 "b c c"
+                 "b d d"
+                 "e e e";
+  grid-gap: 20px;
+
+  @media screen and (max-width: 800px) {
+    grid-template: "a"
+                   "b"
+                   "c"
+                   "d"
+                   "e";
+  }
+
+  .block {
+    background: #fff;
+
+    .inset-block {
+      padding: 20px;
+    }
+
+    h1 {
+      font: 4em "New Rocker", sans-serif;
+      padding: 0 20px;
+      color: @main-hovercolor;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.7);
+      border-bottom: 3px solid #b2b2b2;
+
+      @media screen and (max-width: 324px) {
+        font-size: 3.5em;
+      }
+    }
+  }
+
+  /*===========LIVE_VIDEO===========*/
+
+  .life-video {
+    grid-area: a;
+
+    .videos {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 320px));
+      grid-gap: 20px;
+      justify-content: center;
+
+      .video-box {
+        position: relative;
+
+        .video-name {
+          position: absolute;
+          width: 40%;
+          top: 0;
+          right: 0;
+          background: rgba(255, 255, 255, .5);
+          color: @main-hovercolor;
+          font-family: "New Rocker", sans-serif;
+          text-align: center;
+          .binary-animation(all, .3s);
+        }
+
+        &:hover .video-name {
+          opacity: 0;
+        }
+
+        iframe {
+          width: 100%;
+          height: 180px;
+        }
+      }
+    }
+    
+    .youtube-invitation {
+      padding: 0 20px 20px;
+      font-weight: 900;
+      text-align: right;
+
+      a {
+        text-decoration: none;
+
+        i {
+          color: #000;
+          font-size: 1.5em;
+          position: relative;
+          top: 5px;
+          .binary-animation(all, .2s);
+
+          &:hover {
+            color: @main-hovercolor;
+          }
+        }
+      }
+    }
+  }
+
+  /*=======END_LIFE_VIDEO==========*/
+
+  /*==============TOURS===========*/
+
+  .tours {
+    grid-area: b;
+    padding: 20px;
+
+    h3 {
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+
+      span {
+        font-size: 1.5em;
+        font-weight: 800;
+      }
+    }
+
+    .single-tour {
+      display: grid;
+      grid-template-columns: minmax(30px, 70px) 1fr;
+      grid-gap: 20px;
+      background: @block-bg;
+      padding: 20px;
+
+      @media screen and (max-width: 337px) {
+        grid-template-columns: none;
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 20px;
+      }
+      &:hover {
+        -webkit-box-shadow: 0 0 5px 5px rgba(255, 0, 0, .5);
+        -moz-box-shadow: 0 0 5px 5px rgba(255, 0, 0, .5);
+        box-shadow: 0 0 5px 5px rgba(255, 0, 0, .5);
+      }
+
+      time {
+        font: 1.5em Arial, sans-serif;
+        font-weight: 900;
+        color: @main-hovercolor;
+        border-right: 3px solid @main-hovercolor;
+
+        @media screen and (max-width: 337px) {
+          border: none;
+          border-bottom: 3px solid @main-hovercolor;
+        }
+      }
+
+      .tour-info {
+        color: @main-color;
+
+        h4 {
+          font-size: 1.3em;
+
+          span {
+            font-weight: 900;
+            text-transform: uppercase;
+          }
+        }
+
+        .ticket-button {
+          width: 200px;
+          margin: 10px 0;
+          .binary-animation(width, .5s, ease-in-out);
+
+          &:hover {
+            width: 100%;
+          }
+
+          @media screen and (max-width: 387px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  /*=============END_TOUR===============*/
+
+  /*=============SUMMARY================*/
+
+  .band-summary {
+    background: #fff;
+    grid-area: c;
+    font: 1.2em Arial, sans-serif;
+    text-align: justify;
+
+    blockquote {
+      text-align: right;
+      font: 1.3em "New Rocker", sans-serif;
+      margin-bottom: 20px;
+      .binary-animation(all, .3s);
+    }
+
+    &:hover blockquote {
+      color: @main-hovercolor;
+    }
+    
+    p::first-letter {
+      font-size: 1.3em;
+      color: @main-hovercolor;
+      float: left;
+    }
+
+    P::first-line {
+      line-height: 1.3em;
+    }
+  }
+
+  /*=============END_SUMMARY============*/
+
+  /*==============AWMH==================*/
+
+  .all-within-my-hands {
+    grid-area: d;
+    padding: 20px;
+    background: url("../img/index/awmh.png") 50% 50% no-repeat,
+                linear-gradient(to bottom, @block-bg, #b2b2b2, @block-bg);
+    color: #fff;
+    text-shadow: 2px 2px rgba(0, 0, 0, 1);
+    overflow: hidden;
+
+    h3 {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .learn-more-button {
+      text-shadow: none;
+      width: 300px;
+      .binary-animation(all, .2s);
+
+      &:hover {
+        .element-transform(translateY(-5px));
+        -webkit-box-shadow: 0 5px 15px rgba(250, 0, 0, .5);
+        -moz-box-shadow: 0 5px 15px rgba(250, 0, 0, .5);
+        box-shadow: 0 5px 15px rgba(250, 0, 0, .5);
+      }
+
+      @media screen and (max-width: 370px) {
+        width: 200px;
+      }
+    }
+
+    .slide-down {
+      .element-transform(translateY(-110%));
+      .binary-animation(transform, .3s);
+
+      @media screen and (max-width: 800px) {
+        .element-transform(translateY(0));
+      }
+    }
+
+    &:hover .slide-down {
+      .element-transform(translateY(0));
+    }
+
+  }
+
+  /*============END_AWMH===========*/
+
+  /*==============NEWS============*/
+
+  .news {
+    grid-area: e;
+    padding-bottom: 20px;
+    
+    .subscribe-form {
+      text-align: center;
+      margin-top: 20px;
+
+      label {
+        font: 1.2em "New Rocker", sans-serif;
+        color: @main-hovercolor;
+      }
+
+      [type="email"] {
+        outline: none;
+        .round-corners(5px);
+        font-size: 1.1em;
+        margin: 0 10px;
+        border: 1px solid @main-hovercolor;
+        padding: 5px;
+
+        &::placeholder {
+          color: @main-hovercolor;
+        }
+      }
+
+      .subscribe-button {
+        display: inline-block;
+        width: 110px;
+        padding: 5px;
+        border: none;
+        outline: none;
+        .binary-animation(all, .2s);
+        cursor: pointer;
+
+        &:hover {
+          .element-transform(translateY(-3px));
+          -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+          -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+        }
+
+        @media screen and (max-width: 437px) {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .inset-block {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+
+      @media screen and (max-width: 675px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      article {
+        background: @block-bg;
+        padding: 20px;
+        position: relative;
+        &:hover {
+          -webkit-box-shadow: 0 0 5px 5px rgba(255, 0, 0, .5);
+          -moz-box-shadow: 0 0 5px 5px rgba(255, 0, 0, .5);
+          box-shadow: 0 0 5px 5px rgba(255, 0, 0, .5);
+        }
+
+        .image-container {
+          width: 100%;
+          overflow: hidden;
+        }
+
+        img {
+          width: 100%;
+          display: block;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          .binary-animation(all, .2s);
+        }
+
+        &:hover img {
+          .element-transform(scale(1.1));
+        }
+
+
+        .topic {
+          margin: 10px 0;
+
+          .timeline {
+            color: @main-hovercolor;
+            font-weight: 900;
+          }
+
+          h4 {
+            color: @main-color;
+            font-size: 1.3em;
+            font-weight: 900;
+          }
+        }
+
+        p {
+          font: 1.2em Arial, sans-serif;
+          text-align: justify;
+          color: @main-color;
+          overflow: hidden;
+          word-wrap: break-word;
+          height: 100px;
+          margin-bottom: 60px;
+        }
+
+        .news-button {
+          width: 150px;
+          position: absolute;
+          bottom: 20px;
+          left: 20px;
+          .binary-animation(all, .2s);
+
+          &:hover {
+            .element-transform(translateY(-5px));
+            -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+            -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+          }
+
+          @media screen and (max-width: 350px) {
+            width: 120px;
+          }
+        }
+
+        .like-bar {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          font-size: 1.5em;
+          color: @main-color;
+
+          .counter {
+            margin-left: 10px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+
+          .like-button {
+            cursor: pointer;
+            .binary-animation(all, .2s);
+
+            &:hover {
+              color: @main-hovercolor;
+            }
+          }
+        }
+      }
+    }
+
+    .general-news {
+      width: 300px;
+      .binary-animation(all, .2s);
+
+      &:hover {
+        .element-transform(translateY(-5px));
+        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+        -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .6);
+      }
+
+      @media screen and (max-width: 360px) {
+        width: 200px;
+      }
+    }
+  }
+
+  /*============END_NEWS==========*/
+
+}
+
+

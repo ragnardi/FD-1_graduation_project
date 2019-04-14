@@ -1,0 +1,23 @@
+//mostly usable mixins
+
+.round-corners(@radius: none) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius:@radius;
+  border-radius: @radius;
+}
+
+.binary-animation(@property, @time, @timing: linear) {
+  -webkit-transition: @property @time @timing;
+  -moz-transition: @property @time @timing;
+  -ms-transition: @property @time @timing;
+  -o-transition: @property @time @timing;
+  transition: @property @time @timing;
+}
+
+.element-transform(@action) {
+  -webkit-transform: @action;
+  -moz-transform: @action;
+  -ms-transform: @action;
+  -o-transform: @action;
+  transform: @action;
+}

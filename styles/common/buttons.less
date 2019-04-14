@@ -1,0 +1,57 @@
+@import "webfonts.less";
+@import "mix.less";
+@import "vars.less";
+
+/*============UP_BUTTON===========*/
+.scroll-up {
+  width: 100px;
+  text-align: center;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  .round-corners(10px);
+  background: @button-bg;
+  color: @main-color;
+  font-size: 1.5em;
+  font-weight: 900;
+  cursor: pointer;
+  opacity: .3;
+  .binary-animation(all, .3s);
+  display: none;
+
+  &:hover {
+    opacity: 1;
+    color: @main-hovercolor;
+  }
+}
+/*===========END_UP_BUTTON========*/
+
+.page-button {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 900;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 10px 0;
+  margin: 0 auto;
+  .round-corners(5px);
+
+  /*========BUTTON-BG==========*/
+  background: #f3c5bd;
+  background: -moz-linear-gradient(top, #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 75%, #c72200 100%);
+  background: -webkit-linear-gradient(top, #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%);
+  background: linear-gradient(to bottom, #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#c72200',GradientType=0 );
+  /*======END_BUTTON-BG=======*/
+
+  .binary-animation(all, .2s);
+
+  &:hover {
+    color: @main-hovercolor;
+  }
+}
